@@ -1,11 +1,7 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gorilla/mux"
-	"html/template"
-	"labix.org/v2/mgo"
-	"labix.org/v2/mgo/bson"
 	"log"
 	"net/http"
 )

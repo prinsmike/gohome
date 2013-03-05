@@ -1,6 +1,6 @@
-package user
+package main
 
-import (
+/*import (
 	"code.google.com/p/go.crypto/bcrypt"
 	"labix.org/v2/mgo/bson"
 )
@@ -26,4 +26,4 @@ func login(w http.ResponseWriter, req *http.Request, db *DB) (err error) {
 
 func userExists(username string) bool {
 
-}
+}*/

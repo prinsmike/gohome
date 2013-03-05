@@ -1,5 +1,0 @@
-package mongo
-
-import (
-	"fmt"
-)

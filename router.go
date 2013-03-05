@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 )
 
 type Path struct {
@@ -53,19 +54,13 @@ func notFound(w http.ResponseWriter, req *http.Request) {
 }
 
 func getPaths() []Path {
-	session, err := mgo.Dial("localhost")
-	if err != nil {
-		panic(err)
-	}
+
+	session, db := NewMongoConnection("localhost", "test")
 	defer session.Close()
-
-	// Optional. Switch the session to a monotonic behavior.
-	session.SetMode(mgo.Monotonic, true)
-
-	c := session.DB("test").C("mux")
+	c := db.C("mux")
 
 	result := []Path{}
-	err = c.Find(bson.M{}).All(&result)
+	err := c.Find(M{}).All(&result)
 	if err != nil {
 		panic(err)
 	}

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 )
 
 type Templates struct {
